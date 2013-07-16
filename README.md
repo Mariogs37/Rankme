@@ -1,6 +1,8 @@
 # Rankme
 
-TODO: Write a gem description
+This gem rates and subsequently ranks players based on the results of 1 v 1 matches.  It estimates a user's skill and provides a sigma value such that 
+the user's true skill falls within + / - 2 sigma with a very high degree of confidence.  As a result, users with more history, all other factors equal, will
+experience smaller changes in rating than players with less matches played.
 
 ## Installation
 
@@ -18,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+As of now (v0.0.2), Rankme provides the basic and advanced functions needed to rate players.  
 
 ## Contributing
 

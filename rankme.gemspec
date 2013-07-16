@@ -6,7 +6,7 @@ require 'rankme/version'
 Gem::Specification.new do |spec|
   spec.name          = "rankme"
   spec.version       = Rankme::VERSION
-  spec.authors       = ["Ben"]
+  spec.authors       = ["Ben Clayman"]
   spec.email         = ["benjamin_clayman@alumni.brown.edu"]
   spec.description   = %q{This gem takes the 1v1 match results of two players
                         and generates updated ratings (and subsequently a ladder)

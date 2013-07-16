@@ -1,5 +1,4 @@
-APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
-$: << File.join(APP_ROOT, 'lib/rankme') # so rspec knows where your file could be
+require 'spec_helper'
 
 describe "basic rankme functions" do
   it "should return __ for erf(1)"
