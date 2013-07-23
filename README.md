@@ -1,6 +1,6 @@
 # Rankme
 
-This gem rates and subsequently ranks players based on the results of 1 v 1 matches.  It estimates a user's skill using a conservative method (i.e. it errs on the side of underestimating a player's skill)  Additionally, users with more history, all other factors equal, will
+This gem rates and subsequently ranks players based on the results of 1 v 1 matches.  It estimates a user's skill using a conservative method (i.e. it errs on the side of underestimating a player's skill).  Additionally, users with more history, all other factors equal, will
 experience smaller changes in rating than players with less matches played.
 
 Finally, this algorithm, similar to ELO, only measures skill relative to other players based on events (in our case, matches).  That is, an absolute measure of skill isn't possible: we can only provide a relative assessment.  If we have two lists, A and B, of players and players in A never play players in B, it'll be impossible to order a player in A relative to a player in B.  Addressing this problem is beyond the scope of this gem.
@@ -21,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-As of now (v0.0.2), Rankme provides the basic and advanced functions needed to rate players.  
+As of now (v0.0.2), Rankme provides the basic and advanced functions needed to rate players using the algorithm described above.
 
 ## Contributing
 
