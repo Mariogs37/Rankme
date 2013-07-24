@@ -7,43 +7,53 @@ girls = ["Jessica Alba", "Jessica Simpson", "Britney Spears", "Jennifer Lopez", 
           "Gisele", "Emma Watson", "Beyonce", "Denise Richards", "Christina Aguilera", "Lucy Liu", "Nicole Kidman",
           "Jennifer Anniston", "Scarlett Johansson", "Carmen Electra", "Natalie Portman", "Anna Kournikova"]
 
-def round(players_left)
-  girl1 = next_round(players_left)[0]
-  modified_array = players_left
-  modified_array.delete(girl1)
-  binding.pry
-  girl2 = modified_array.sample
-  puts "Who is cuter, #{girl1} (1) or #{girl2} (2) ?"
-  answer = gets.chomp
-  if answer == '1'
-    outcome = [girl1, girl2]
-  else
-    outcome = [girl2, girl1]
-  end
-  winner = outcome[0]
-  loser = outcome[1]
-  update(winner, loser)
+#def round(players_left)
+#  girl1 = next_round(players_left)[0]
+#  modified_array = players_left
+#  modified_array.delete(girl1)
+#  binding.pry
+#  girl2 = modified_array.sample
+#  puts "Who is cuter, #{girl1} (1) or #{girl2} (2) ?"
+#  answer = gets.chomp
+#  if answer == '1'
+#    outcome = [girl1, girl2]
+#  else
+#    outcome = [girl2, girl1]
+#  end
+#  winner = outcome[0]
+#  loser = outcome[1]
+#  update(winner, loser)
+#end
+#
+#def play
+#  puts "ROUND #: #{games.length + 1}"
+#end
+#
+#def test_game
+#  puts "How many rounds would you like to play?"
+#  num_rounds = gets.chomp.to_i
+#  n = 0
+#  while n < num_rounds
+#    play
+#    round
+#    n += 1
+#  end
+#  winner = rate_me(@games)[0]
+#  loser = rate_me(@games)[1]
+#  winner_score = squads[winner]
+#  loser_score = squads[loser]
+#  puts rate_me(@games)
+#end
+
+
+
+game = Rankme::Ranker.new(girls)
+
+players = game.play()
+
+while game.progress < 100
+  players = game.play(players.sample)
 end
 
-def play
-  puts "ROUND #: #{games.length + 1}"
-end
+puts "#{game.results}"
 
-def test_game
-  puts "How many rounds would you like to play?"
-  num_rounds = gets.chomp.to_i
-  n = 0
-  while n < num_rounds
-    play
-    round
-    n += 1
-  end
-  winner = rate_me(@games)[0]
-  loser = rate_me(@games)[1]
-  winner_score = squads[winner]
-  loser_score = squads[loser]
-  puts rate_me(@games)
-end
-
-
-test_game(Rankme.ranker.new(girls))

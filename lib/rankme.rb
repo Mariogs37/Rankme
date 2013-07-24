@@ -3,6 +3,8 @@ $LOAD_PATH.unshift(libdir) unless $LOAD_PATH.include?(libdir)
 
 require "rankme/version"
 require "rankme/ranker"
+require "rankme/player"
+require "rankme/score"
 require 'pry'
 
 module Rankme

@@ -16,6 +16,8 @@ module Rankme
     A5 =  1.061405429
     P  =  0.3275911
 
+    attr_accessor :played, :players, :current_match_up
+
     def initialize(player_ids = [])
       reset(player_ids)
     end
@@ -25,7 +27,11 @@ module Rankme
         return next_round
       end
 
-      score(winner_id) unless winner_id.nil?
+      if winner_id.nil? || !@current_match_up.include?(winner_id)
+        return @current_match_up
+      end
+
+      score(winner_id)
 
       #return next match-up
       next_round
@@ -33,7 +39,7 @@ module Rankme
 
     def progress
       if @played.length > 0
-        @players.length / ( @played.length * 2 )
+        ( ( @played.length / ( @players.length * 2 ).to_f ) * 100 ).round(0)
       else
         0
       end
@@ -41,32 +47,32 @@ module Rankme
 
     def results
       # return plays sorted
-      participants = @players.select(@played.flatten)
-      participants.sort { |a,b| sort_players(a, b) }
+      @played.uniq.sort_by!{ |player| player.score.estimated_skill } .reverse.map(&:id)
     end
 
     def reset(player_ids = [])
       @players = {}
-      @results = {}
-      @played = {}
+      @results = []
+      @played = []
       @current_match_up = []
-      player_ids.each { |id| players[id] = Player.new(id) }
+      player_ids.each { |id| @players[id] = Player.new(id) }
     end
 
     private
 
     def score(winner_id)
-      loser_id = @current_match_up.reject(winner_id)
+      loser_id = @current_match_up.select { |k,v| k != winner_id }[0]
       #score round
-      calculate_mu_sigma(winner_id, loser_id) unless ( winner.nil? || loser.nil? )
+      calculate_mu_sigma(winner_id, loser_id)
+      puts "#{@played.map(&:id).length}/#{@players.length} #{progress} -#{winner_id}- stomps -#{loser_id}-"
     end
 
     def next_round
-      players_left = @players.reject(@played.flatten)
+      players_left = @players.reject { |k,v| @played.flatten.include?(k) }
       match_up = []
-      match_up << players_left.sample
-      match_up << ( players_left.select { |p| p != match_up[0] } ).sample
-      @current_match_up = [match_up[0].id, match_up[1].id]
+      match_up << players_left.keys.sample
+      match_up << ( players_left.select { |p| p != match_up[0] } ).keys.sample
+      @current_match_up = [match_up[0], match_up[1]]
     end
 
     def sort_players(a, b)
@@ -74,7 +80,7 @@ module Rankme
     end
 
     # Functions: erf, pdf, cdf, vwin, wwin
-    def self.erf(x)
+    def erf(x)
       # save the sign of x
       sign = 1
       if x < 0
@@ -87,26 +93,25 @@ module Rankme
       sign * y
     end
 
-    def self.pdf(x)
+    def pdf(x)
       1 / (2 * PI) ** 0.5 * E ** (-x ** 2 / 2)
     end
 
-    def self.cdf(x)
+    def cdf(x)
       (1 + erf(x / PI ** 0.5)) / 2
     end
 
-    def self.vwin(t, e)
+    def vwin(t, e)
       pdf(t - e) / cdf(t - e)
     end
 
-    def self.wwin(t, e)
+    def wwin(t, e)
       vwin(t, e) * (vwin(t, e) + t - e)
     end
 
     # Update mu and sigma values for winner and loser
 
     def calculate_mu_sigma(winner_id, loser_id)
-
       muw = @players[winner_id].score.mu
       sigmaw = @players[winner_id].score.sigma
 
@@ -122,12 +127,16 @@ module Rankme
       mul_new = (mul - sigmal ** 2 / c * vwin(t, e))
 
       @players[winner_id].score.mu = muw_new
-      @players[winner_id].score.mu = sigmaw_new
+      @players[winner_id].score.sigma = sigmaw_new
 
       @players[loser_id].score.mu = mul_new
-      @players[loser_id].score.mu = sigmal_new
+      @players[loser_id].score.sigma = sigmal_new
 
-      @rounds << [players[winner_id], players[loser_id]]
+      winner = @players[winner_id]
+      loser = @players[loser_id]
+
+      @played.push(winner)
+      @played.push(loser)
     end
 
   end

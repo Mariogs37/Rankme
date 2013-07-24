@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcf6ac8b-d893-4e8a-9d34-038102822577" name="Default" comment="" />
+    <list default="true" id="fcf6ac8b-d893-4e8a-9d34-038102822577" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/rankme/player.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rankme/player_list.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rankme/players.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rankme/ranker.rb" afterPath="$PROJECT_DIR$/lib/rankme/ranker.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rankme.rb" afterPath="$PROJECT_DIR$/lib/rankme.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/rankme" afterPath="$PROJECT_DIR$/bin/rankme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rankme/score.rb" afterPath="$PROJECT_DIR$/lib/rankme/score.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rankme/version.rb" afterPath="$PROJECT_DIR$/lib/rankme/version.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="rankme.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374523361704" ignored="false" />
-    <file path="/rankme.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374522360593" ignored="false" />
+    <file path="/rankme.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374636061892" ignored="false" />
     <file path="/rankme_spec.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374514867427" ignored="false" />
     <file path="/spec_helper.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374522752311" ignored="false" />
     <file path="/rankme.gemspec" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374513262630" ignored="false" />
-    <file path="/ranker.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374633562640" ignored="false" />
-    <file path="/rankme" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374613921195" ignored="false" />
+    <file path="/ranker.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374640754606" ignored="false" />
+    <file path="/rankme" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374639853037" ignored="false" />
     <file path="$PROJECT_DIR$/../../Brewster/brewster/app/controllers/rating_game_controller.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374631571005" ignored="false" />
     <file path="/rating_game_controller.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374631568566" ignored="false" />
     <file path="$PROJECT_DIR$/../../Brewster/brewster/app/models/user.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374631003896" ignored="false" />
@@ -24,16 +34,17 @@
     <file path="$PROJECT_DIR$/../../Brewster/brewster/config/elastictastic/templates.yml" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374595700384" ignored="false" />
     <file path="$PROJECT_DIR$/../../Brewster/brewster/config/routes.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374631260444" ignored="false" />
     <file path="/routes.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374628597409" ignored="false" />
-    <file path="/score.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374615046784" ignored="false" />
-    <file path="/players.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374615070208" ignored="false" />
+    <file path="/score.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374635482335" ignored="false" />
+    <file path="/players.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374635527885" ignored="false" />
     <file path="/player_list.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374617072512" ignored="false" />
     <file path="$PROJECT_DIR$/../../Brewster/brewster/app/views/rating_game/game.html.haml" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374629764974" ignored="false" />
     <file path="/game.html.haml" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374629764974" ignored="false" />
     <file path="$PROJECT_DIR$/../../Brewster/brewster/app/views/user_mailer/account_ready.html.haml" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374629667883" ignored="false" />
     <file path="/account_ready.html.haml" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374629665380" ignored="false" />
     <file path="/a.dummy" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374630774630" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Brewster/brewster/Gemfile" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374634042885" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Brewster/brewster/Gemfile" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374634299769" ignored="false" />
     <file path="/Gemfile" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374631644829" ignored="false" />
+    <file path="/player.rb" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374639303179" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,19 +64,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="rankme_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/rankme_spec.rb">
+      <file leaf-file-name="rankme" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/rankme">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="98" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ranker.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/rankme/ranker.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="82" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
+            <state line="15" column="58" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -74,18 +76,25 @@
       <file leaf-file-name="rankme.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/rankme.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="59" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1374522390000" expanded="true" signature="172:237" placeholder=" ... end" />
-              </folding>
+            <state line="6" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rankme" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/rankme">
+      <file leaf-file-name="ranker.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/rankme/ranker.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="0" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.0">
+            <state line="67" column="0" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rankme.gemspec" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rankme.gemspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="30" selection-start="198" selection-end="204" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,20 +103,17 @@
       <file leaf-file-name="version.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/rankme/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="25" selection-start="38" selection-end="38" vertical-scroll-proportion="0.049668875">
+            <state line="1" column="18" selection-start="32" selection-end="32" vertical-scroll-proportion="0.016146393">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="players.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/rankme/players.rb">
+      <file leaf-file-name="player.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/rankme/player.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="9" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1374615071000" expanded="true" signature="12:123" placeholder=" ... end" />
-                <marker date="1374615071000" expanded="true" signature="81:119" placeholder=" ... end" />
-              </folding>
+            <state line="6" column="24" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +121,7 @@
       <file leaf-file-name="score.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/rankme/score.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="83" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+            <state line="7" column="52" selection-start="136" selection-end="169" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -149,22 +155,22 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/rankme.gemspec" />
-        <option value="$PROJECT_DIR$/lib/rankme.rb" />
         <option value="$PROJECT_DIR$/spec/rankme_spec.rb" />
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
-        <option value="$PROJECT_DIR$/bin/rankme" />
-        <option value="$PROJECT_DIR$/lib/rankme/score.rb" />
-        <option value="$PROJECT_DIR$/lib/rankme/players.rb" />
         <option value="$PROJECT_DIR$/lib/rankme/player_list.rb" />
+        <option value="$PROJECT_DIR$/lib/rankme/players.rb" />
+        <option value="$PROJECT_DIR$/lib/rankme.rb" />
+        <option value="$PROJECT_DIR$/lib/rankme/score.rb" />
+        <option value="$PROJECT_DIR$/lib/rankme/player.rb" />
         <option value="$PROJECT_DIR$/lib/rankme/ranker.rb" />
+        <option value="$PROJECT_DIR$/bin/rankme" />
         <option value="$PROJECT_DIR$/lib/rankme/version.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
     <option name="y" value="22" />
-    <option name="width" value="960" />
+    <option name="width" value="1920" />
     <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -386,14 +392,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="22" width="960" height="1054" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.076307364" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24617068" sideWeight="0.49947754" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.120064035" sideWeight="0.6708464" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24617068" sideWeight="0.5005225" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -402,7 +409,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -474,22 +480,13 @@
     <entry file="file://$PROJECT_DIR$/lib/rankme.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1374522390000" expanded="true" signature="172:237" placeholder=" ... end" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="53" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rankme.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="38" selection-start="1074" selection-end="1074" vertical-scroll-proportion="0.4027927">
           <folding />
         </state>
       </provider>
@@ -501,6 +498,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rankme.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="30" selection-start="198" selection-end="204" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/rankme_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="31" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.33224756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
@@ -508,63 +519,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rankme/player_list.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rankme/score.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="18" selection-end="18" vertical-scroll-proportion="0.03311258">
+        <state line="7" column="52" selection-start="136" selection-end="169" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/rankme_spec.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rankme/player.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="98" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0">
+        <state line="6" column="24" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankme.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="59" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1374522390000" expanded="true" signature="172:237" placeholder=" ... end" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/rankme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rankme/players.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="9" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1374615071000" expanded="true" signature="12:123" placeholder=" ... end" />
-            <marker date="1374615071000" expanded="true" signature="81:119" placeholder=" ... end" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rankme/score.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="83" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+        <state line="6" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankme/ranker.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="82" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
+        <state line="67" column="0" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/rankme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="58" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankme/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="38" selection-end="38" vertical-scroll-proportion="0.049668875">
+        <state line="1" column="18" selection-start="32" selection-end="32" vertical-scroll-proportion="0.016146393">
           <folding />
         </state>
       </provider>
