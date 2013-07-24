@@ -16,16 +16,61 @@ module Rankme
     A5 =  1.061405429
     P  =  0.3275911
 
+    def initialize(player_ids = [])
+      reset_game(player_ids)
+    end
 
+    def play(winner_id = nil)
+      if @current_match_up.empty?
+        return next_round
+      end
 
-    attr_accessor :squads
+      score(winner_id) unless winner_id.nil?
 
-    def initialize
-      @squads = {}
-      @games = []
-      @girls = ["Jessica Alba", "Jessica Simpson", "Britney Spears", "Jennifer Lopez", "Heidi Klum",
-                "Gisele", "Emma Watson", "Beyonce", "Denise Richards", "Christina Aguilera", "Lucy Liu", "Nicole Kidman",
-                "Jennifer Anniston", "Scarlett Johansson", "Carmen Electra", "Natalie Portman", "Anna Kournikova"]
+      #return next match-up
+      next_round
+    end
+
+    def progress
+      if @played.length > 0
+        @players.length / ( @played.length * 2 )
+      else
+        0
+      end
+    end
+
+    def results
+      # return plays sorted
+      participants = @players.select(@played.flatten)
+      participants.sort { |a,b| sort_players(a, b) }
+    end
+
+    def reset(player_ids = [])
+      @players = {}
+      @results = {}
+      @played = {}
+      @current_match_up = []
+      player_ids.each { |id| players[id] = Player.new(id) }
+    end
+
+    private
+
+    def score(winner_id)
+      loser_id = @current_match_up.reject(winner_id)
+      #score round
+      calculate_mu_sigma(winner_id, loser_id) unless ( winner.nil? || loser.nil? )
+    end
+
+    def next_round
+      players_left = @players.reject(@played.flatten)
+      match_up = []
+      match_up << players_left.sample
+      match_up << ( players_left.select { |p| p != match_up[0] } ).sample
+      @current_match_up = [match_up[0].id, match_up[1].id]
+    end
+
+    def sort_players(a, b)
+      @players[a].score.estimated_skill <=> @players[b].score.estimated_skill
     end
 
     # Functions: erf, pdf, cdf, vwin, wwin
@@ -60,12 +105,14 @@ module Rankme
 
     # Update mu and sigma values for winner and loser
 
-    def self.calculate_mu_sigma(winner, loser)
+    def calculate_mu_sigma(winner_id, loser_id)
 
-      muw = winner[0]
-      sigmaw = winner[1]
-      mul = loser[0]
-      sigmal = loser[1]
+      muw = @players[winner_id].score.mu
+      sigmaw = @players[winner_id].score.sigma
+
+      mul = @players[loser_id].score.mu
+      sigmal = @players[loser_id].score.sigma
+
       c = (2 * BETA ** 2 + sigmaw ** 2 + sigmal ** 2) ** 0.5
       t = (muw - mul) / c
       e = EPSILON / c
@@ -74,99 +121,14 @@ module Rankme
       muw_new = (muw + sigmaw ** 2 / c * vwin(t, e))
       mul_new = (mul - sigmal ** 2 / c * vwin(t, e))
 
-      winner = [muw_new, sigmaw_new]
-      loser = [mul_new, sigmal_new]
+      @players[winner_id].score.mu = muw_new
+      @players[winner_id].score.mu = sigmaw_new
 
-      [winner, loser]
+      @players[loser_id].score.mu = mul_new
+      @players[loser_id].score.mu = sigmal_new
 
+      @rounds << [players[winner_id], players[loser_id]]
     end
-
-    def update_stats(winner, loser)
-      squads[winner] ||= [25, 25.0 / 3]
-      squads[loser] ||= [25, 25.0 / 3]
-      [squads[winner], squads[loser]]
-    end
-
-    def assign_mu_sigma(winner, loser)
-      game_stats = update_stats(winner, loser)
-      winner_stats = game_stats[0]
-      loser_stats = game_stats[1]
-      # assigns [muw_new, sigmaw_new] to squads[winner]
-      squads[winner] = (Rankme::Ranker.calculate_mu_sigma(winner_stats, loser_stats))[0]
-
-      # assigns [mul_new, sigmal_new] to squads[loser]
-      squads[loser] = (Rankme::Ranker.calculate_mu_sigma(winner_stats, loser_stats))[1]
-
-      [squads[winner], squads[loser]]
-    end
-
-    def update(winner, loser)
-      update_stats(winner, loser)
-      assign_mu_sigma(winner, loser)
-    end
-
-    #rank function in python code
-    #calculates mu - 3 * sigma
-
-    def estimated_skill(player)
-      squads[player][0] - 3 * squads[player][1]
-    end
-
-
-    # squad --> map by estimated_skill function
-    #sort and reverse
-
-    def rate_me(matchups)
-      matchups.each do |matchup|
-        update(*matchup)
-        @squads.keys.sort { |a,b| self.sorted_squads_reverse(a, b) }
-      end
-      @squads.keys.sort { |a,b| self.sorted_squads_reverse(a, b) }
-    end
-
-    def sorted_squads_reverse(a, b)
-      estimated_skill(b) <=> estimated_skill(a)
-    end
-
-    def round
-      girl1 = @girls.sample
-      modified_array = @girls
-      modified_array.delete(girl1)
-      girl2 = modified_array.sample
-      puts "Who is cuter, #{girl1} (1) or #{girl2} (2) ?"
-      answer = gets.chomp
-      if answer == '1'
-        outcome = [girl1, girl2]
-      else
-        outcome = [girl2, girl1]
-      end
-      winner = outcome[0]
-      loser = outcome[1]
-      update(winner, loser)
-      @games.push(outcome)
-    end
-
-    def play
-      puts "ROUND #: #{@games.length + 1}"
-    end
-
-    def test_game
-      puts "How many rounds would you like to play?"
-      num_rounds = gets.chomp.to_i
-      n = 0
-      while n < num_rounds
-        play
-        round
-        n += 1
-      end
-      winner = rate_me(@games)[0]
-      loser = rate_me(@games)[1]
-      winner_score = squads[winner]
-      loser_score = squads[loser]
-      puts rate_me(@games)
-    end
-
-    # open('rankings.txt','w').write('\n'.join(trueskill.rate(games)))
 
   end
 end
