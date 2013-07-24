@@ -17,7 +17,7 @@ module Rankme
     P  =  0.3275911
 
     def initialize(player_ids = [])
-      reset_game(player_ids)
+      reset(player_ids)
     end
 
     def play(winner_id = nil)
