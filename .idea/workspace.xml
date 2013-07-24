@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcf6ac8b-d893-4e8a-9d34-038102822577" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/rankme.iml" afterPath="$PROJECT_DIR$/.idea/rankme.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rankme/ranker.rb" afterPath="$PROJECT_DIR$/lib/rankme/ranker.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rankme/version.rb" afterPath="$PROJECT_DIR$/lib/rankme/version.rb" />
-    </list>
+    <list default="true" id="fcf6ac8b-d893-4e8a-9d34-038102822577" name="Default" comment="" />
     <ignored path="rankme.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374523361704" ignored="false" />
@@ -36,7 +32,7 @@
     <file path="$PROJECT_DIR$/../../Brewster/brewster/app/views/user_mailer/account_ready.html.haml" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374629667883" ignored="false" />
     <file path="/account_ready.html.haml" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374629665380" ignored="false" />
     <file path="/a.dummy" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374630774630" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Brewster/brewster/Gemfile" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374631646147" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Brewster/brewster/Gemfile" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374634042885" ignored="false" />
     <file path="/Gemfile" changelist="fcf6ac8b-d893-4e8a-9d34-038102822577" time="1374631644829" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +94,7 @@
       <file leaf-file-name="version.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/rankme/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.01655629">
+            <state line="3" column="25" selection-start="38" selection-end="38" vertical-scroll-proportion="0.049668875">
               <folding />
             </state>
           </provider>
@@ -568,7 +564,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rankme/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.01655629">
+        <state line="3" column="25" selection-start="38" selection-end="38" vertical-scroll-proportion="0.049668875">
           <folding />
         </state>
       </provider>
