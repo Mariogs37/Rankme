@@ -94,4 +94,23 @@ describe "advanced rankme functions" do
     end
 
   end
+
+  describe "skip function" do
+    it "should set right player to E" do
+      a = Rankme::Player.new(1)
+      b = Rankme::Player.new(2)
+      c = Rankme::Player.new(3)
+      d = Rankme::Player.new(4)
+      e = Rankme::Player.new(5)
+
+      @skipped = []
+      @played = [[a, b]]
+      @current_match_up = [c, d]
+      @players = [a, b, c, d, e]
+      remaining_players = Rankme::Ranker.new.get_remaining_players
+      left_player_id = d.id
+      right_player_id = Rankme::Ranker.new.get_right_player_id(remaining_players, left_player_id)
+      right_player_id.should == e.id
+    end
+  end
 end

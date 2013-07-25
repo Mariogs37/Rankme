@@ -1,25 +1,15 @@
 module Rankme
   class Ranker
-    # Modules (Math for access to E)
-    include Math
 
-    # Constants
-    E = Math::E
-    PI = Math::PI
-    BETA = 25.0 / 6.0
-    GAMMA = 25.0 / 300.0
-    EPSILON = 0.08
-    A1 =  0.254829592
-    A2 = -0.284496736
-    A3 =  1.421413741
-    A4 = -1.453152027
-    A5 =  1.061405429
-    P  =  0.3275911
 
     attr_accessor :played, :players, :current_match_up
 
     def initialize(player_ids = [])
       reset(player_ids)
+    end
+
+    def get_match_up
+      @current_match_up
     end
 
     def play(winner_id = nil)
@@ -35,6 +25,36 @@ module Rankme
 
       #return next match-up
       next_round
+    end
+
+    def skip_match
+      left_player_id, right_player_id = *current_match_up
+      @skipped << [left_player_id, right_player_id]
+      next_round
+
+    end
+
+    def get_left_player_id(remaining_players)
+      skip_list = []
+      left_player_id = remaining_players.keys.sample
+      @skipped.each do |pair|
+        if pair.include?(left_player_id)
+          skip_list.push(pair.reject { |k| k == left_player_id })
+          players_remaining = players_remaining.reject { |k| skip_list.flatten.include?(k) }
+        end
+      end
+    end
+
+    def get_right_player_id(remaining_players, left_player_id)
+      remaining_players = remaining_players.select { |k| k != left_player_id }
+      right_player_id = remaining_players.keys.sample
+    end
+
+    def next_round
+      remaining_players = get_remaining_players
+      left_player_id = get_left_player_id(remaining_players)
+      right_player_id = get_right_player_id(left_player_id)
+      @current_match_up = [left_player_id, right_player_id]
     end
 
     def progress
@@ -54,9 +74,16 @@ module Rankme
       @players = {}
       @results = []
       @played = []
+      @skipped = [] #array of skipped match_ups
       @current_match_up = []
       player_ids.each { |id| @players[id] = Player.new(id) }
     end
+
+    def get_player_score(player_id)
+      @players[player_id].try(:score)
+    end
+
+
 
     private
 
@@ -64,15 +91,13 @@ module Rankme
       loser_id = @current_match_up.select { |k,v| k != winner_id }[0]
       #score round
       calculate_mu_sigma(winner_id, loser_id)
+      puts "#{@current_match_up}"
       puts "#{@played.map(&:id).length}/#{@players.length} #{progress} -#{winner_id}- stomps -#{loser_id}-"
     end
 
-    def next_round
-      players_left = @players.reject { |k,v| @played.flatten.include?(k) }
-      match_up = []
-      match_up << players_left.keys.sample
-      match_up << ( players_left.select { |p| p != match_up[0] } ).keys.sample
-      @current_match_up = [match_up[0], match_up[1]]
+    def get_remaining_players
+      played_keys = @played.map(&:id)
+      @players.reject { |k,v| played_keys.include?(k) }
     end
 
     def sort_players(a, b)
